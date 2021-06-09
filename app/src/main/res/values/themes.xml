@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.VPM" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black_292929</item>
+        <item name="colorPrimaryDark">@color/black_292929</item>
+        <item name="colorAccent">@color/yellow_FFC491</item>
+        <item name="android:checkboxStyle">@style/MyCheckBoxStyle</item>
+    </style>
+
+    <style name="MyCheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="buttonTint">#80CBC4</item>
+    </style>
+</resources>

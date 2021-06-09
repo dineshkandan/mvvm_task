@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.task.vpm.viewmodel.FeedsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_292929"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/app_name"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_header_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardBackgroundColor="@color/yellow_FFC491">
+                <TextView
+                    android:id="@+id/txt_header_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="Videos"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_header_feeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardBackgroundColor="@color/black_292929">
+            <TextView
+                android:id="@+id/txt_header_feeds"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:textSize="@dimen/_12ssp"
+                android:gravity="center"
+                android:textColor="@color/grey_727272"
+                 android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:text="Feeds"/>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/video_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_above="@+id/pb_video"
+                    android:layout_margin="5dp" />
+
+                <ProgressBar
+                    android:id="@+id/pb_video"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feeds_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            app:backgroundTint="@color/yellow_FFC491"
+            android:src="@drawable/ic_plus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_15sdp" />
+    </RelativeLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            card_view:behavior_hideable="true"
+            card_view:behavior_peekHeight="0dp"
+            card_view:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey_444444">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/ic_top_corner_background"
+                    android:layout_alignParentBottom="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:text="Enter the room name"/>
+                    <EditText
+                        android:id="@+id/name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:ems="10"
+                        android:textSize="@dimen/_12ssp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:inputType="textPersonName"
+                        android:text="@={myViewModel.inputName}"
+                        android:textStyle="normal" />
+
+                    <CheckBox
+                        android:id="@+id/ch_live"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="@dimen/_12ssp"
+                        android:text="isLive"
+                        android:buttonTint="#80CBC4"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:checked="@={myViewModel.inputLive}"
+                        android:onCheckedChanged="@{(compoundButton, checked) -> myViewModel.onCheckedChange(compoundButton, checked)}"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/clear_all_or_delete_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Cancel"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="normal"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/grey_727272"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="5dp" />
+
+                        <Button
+                            android:id="@+id/save_or_update_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()->myViewModel.saveOrUpdate()}"
+                            android:text="@={myViewModel.saveOrUpdateButtonText}"
+                            android:textSize="@dimen/_12ssp"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/yellow_FFC491"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
